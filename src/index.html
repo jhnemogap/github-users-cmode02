@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+  >
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<div id="app">
+  <header>
+    <h1>devfinder</h1>
+    <button v-on:click="changeTheme">
+      {{ currentTheme }} - icon
+    </button>
+  </header>
+
+  <main>
+    <div>
+      <form v-on:submit="submit">
+        <div>Icon</div>
+        <input type="text" v-model="search">
+        <button type="submit">Search</button>
+      </form>
+    </div>
+
+    <section>
+      <header>
+        HEADER USER CARD
+      </header>
+
+      <main>
+        MAIN USERNAME CARD
+      </main>
+
+      <footer>
+        FOOTER USERNAME CARD
+      </footer>
+    </section>
+  </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script src="mainScript.js"></script>
+</body>
+</html>
