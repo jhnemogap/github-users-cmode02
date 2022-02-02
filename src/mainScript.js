@@ -1,6 +1,7 @@
 const USERNAME_DEFAULT = "octocat";
 const DARK_THEME_NAME = "dark";
 const LIGHT_THEME_NAME = "light";
+const PREFERS_COLOR_SCHEME_DARK = "(prefers-color-scheme: dark)";
 
 new Vue({
   el: "#app",
@@ -13,9 +14,10 @@ new Vue({
   },
 
   methods: {
-    changeTheme: function() {
+    toggleTheme: function() {
       this.currentTheme = LIGHT_THEME_NAME === this.currentTheme ? DARK_THEME_NAME : LIGHT_THEME_NAME;
     },
+
     submit: async function(event) {
       event?.preventDefault();
       try {
@@ -32,5 +34,6 @@ new Vue({
 
   created: function() {
     this.submit();
+    if (window.matchMedia(PREFERS_COLOR_SCHEME_DARK).matches) this.toggleTheme();
   },
 });

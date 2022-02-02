@@ -1,0 +1,37 @@
+:root {
+  --font-size-base: 16px; /*1rem*/
+  --break-point-xs: 319px; /*20rem*/
+  --break-point-s: 383px; /*24rem*/
+  --break-point-sm: 575px; /*36rem*/
+  --break-point-md: 767px; /*48rem*/
+  --break-point-xm: 927px; /*58rem*/
+  --break-point-lg: 1023px; /*64rem*/
+  --break-point-xl: 1199px; /*75rem*/
+  --break-point-xxl: 1399px; /*87.5rem*/
+}
+
+#app[data-theme=light] {
+  --text-color-primary: #4b6a9b;
+  --text-color-secondary: #2b3442;
+  --text-color-error: #f74646;
+  --btn-theme-color-hover: #222731;
+  --bg-color-primary: #fefefe;
+  --bg-color-secondary: #f6f8ff;
+  --action-color-primary: #0079ff;
+  --action-color-secondary: #697c9a;
+  --action-color-primary-hover: #60abff;
+  --box-shadow-primary: 0 16px 30px -10px #4660bb33;
+}
+
+#app[data-theme=dark] {
+  --text-color-primary: #ffffff;
+  --text-color-secondary: var(--text-color-primary);
+  --text-color-error: #f74646;
+  --btn-theme-color-hover: #90a4d4;
+  --bg-color-primary: #1e2a47;
+  --bg-color-secondary: #141d2f;
+  --action-color-primary: #0079ff;
+  --action-color-secondary: #ffffffc0;
+  --action-color-primary-hover: #60abff;
+  --box-shadow-primary: _;
+}
