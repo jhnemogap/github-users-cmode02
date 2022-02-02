@@ -7,7 +7,10 @@ new Vue({
   el: "#app",
 
   data: {
-    currentTheme: LIGHT_THEME_NAME,
+    colorTheme: {
+      active: LIGHT_THEME_NAME,
+      next: DARK_THEME_NAME,
+    },
     search: "",
     isSearchError: false,
     searchResult: null,
@@ -15,7 +18,7 @@ new Vue({
 
   methods: {
     toggleTheme: function() {
-      this.currentTheme = LIGHT_THEME_NAME === this.currentTheme ? DARK_THEME_NAME : LIGHT_THEME_NAME;
+      [this.colorTheme.active, this.colorTheme.next] = [this.colorTheme.next, this.colorTheme.active]
     },
 
     submit: async function(event) {

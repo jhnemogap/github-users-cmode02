@@ -1,0 +1,65 @@
+/* ------  .layout-container ------ */
+.layout-container {
+  max-width: 46rem;
+  min-height: 100vh;
+  margin: 0 6.4vw;
+  padding: 9.6vw 0 2rem;
+}
+
+/* ------  .layout-header ------ */
+.layout-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2.25rem;
+}
+.layout-header-title {
+  font-size: 1.625rem;
+  color: var(--text-color-secondary);
+}
+.layout-header .toggle-theme {
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  border: 0;
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--text-color-primary);
+}
+.layout-header .toggle-theme:hover {
+  color: var(--btn-theme-color-hover);
+}
+.layout-header .toggle-theme-text {
+  margin-right: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.15625em;
+  text-transform: uppercase;
+}
+
+
+/* ------  .layout-main ------ */
+.layout-main {
+  width: 100%;
+}
+
+
+/* --------------------------------
+ ------  GLOBAL MEDIA QUERIES ------
+  --------------------------------- */
+@media screen and (min-width: 36rem) {
+  .layout-container {
+    margin: 0 12.5vw;
+    padding-top: 18.75vw;
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  .layout-container {
+    padding-top: 9rem;
+  }
+}
+
+@media screen and (min-width: 58rem) {
+  .layout-container {
+    margin: 0 auto;
+  }
+}

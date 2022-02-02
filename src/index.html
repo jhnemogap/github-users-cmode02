@@ -7,47 +7,60 @@
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
   >
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+
+  <meta name="description" content="Web app Challenge: GitHub user search - mode 02 (Vue-js v2)">
+  <title>github-users-cmode02</title>
+
+  <link rel="icon" type="image/ico" href="assets/images/favicon.ico" />
 </head>
 
 <link rel="stylesheet" href="styles/index.css">
 
 <body>
-  <div id="app" v-bind:data-theme="currentTheme">
-    <header>
-      <h1>devfinder</h1>
-      <button v-on:click="toggleTheme">
-        {{ currentTheme }} - icon
-      </button>
-    </header>
 
-    <main>
-      <div>
-        <form v-on:submit="submit">
-          <div>icon</div>
-          <label><input type="text" v-model="search" name="search"></label>
-          <button type="submit">Search</button>
-        </form>
-      </div>
+  <div id="app" v-bind:data-theme="colorTheme.active">
+    <div class="layout-container">
 
-      <section>
-        <header>
-          HEADER USER CARD
-        </header>
+      <header class="layout-header">
+        <h1 aria-label="logo of devfinder" class="layout-header-title">devfinder</h1>
+        <button type="button" class="toggle-theme" v-on:click="toggleTheme">
+          <span class="h4 toggle-theme-text">{{ colorTheme.next }}</span>
+          <sun-icon v-if="colorTheme.next === 'light'"></sun-icon>
+          <moon-icon v-else></moon-icon>
+        </button>
+      </header>
 
-        <main>
-          MAIN USERNAME CARD
-        </main>
+      <main class="layout-main">
+        <div>
+          <form v-on:submit="submit">
+            <div>icon</div>
+            <label><input type="text" v-model="search" name="search"></label>
+            <button type="submit">Search</button>
+          </form>
+        </div>
 
-        <footer>
-          FOOTER USERNAME CARD
-        </footer>
-      </section>
-    </main>
+        <section>
+          <header>
+            HEADER USER CARD
+          </header>
+
+          <main>
+            MAIN USERNAME CARD
+          </main>
+
+          <footer>
+            FOOTER USERNAME CARD
+          </footer>
+        </section>
+      </main>
+
+    </div>
   </div>
+
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script src="icons.js"></script>
 <script src="mainScript.js"></script>
 
 </html>
