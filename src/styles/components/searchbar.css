@@ -1,0 +1,68 @@
+/* ------  .searchbar ------ */
+.searchbar {
+  width: 100%;
+  display: inline-grid;
+  grid-template-columns: min-content auto min-content;
+  column-gap: 0.5rem;
+  align-items: center;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  border-radius: 1rem;
+  background-color: var(--bg-color-primary);
+  box-shadow: var(--box-shadow-primary);
+}
+
+/* ------  .searchbar-icon ------ */
+.searchbar-icon {
+  height: 1.25rem;
+  width: 1.25rem;
+  color: var(--action-color-primary);
+}
+.searchbar-icon > path {
+  transform: scale(0.83333);
+}
+
+/* ------  .searchbar-input ------ */
+.searchbar-input-container {
+  position: relative;
+}
+.searchbar-input {
+  width: 100%;
+  border: none;
+  background-color: var(--bg-color-primary);
+}
+.searchbar-input:-webkit-autofill,
+.searchbar-input:-webkit-autofill:hover,
+.searchbar-input:-webkit-autofill:focus {
+   -webkit-box-shadow: 0 0 0 1000px var(--bg-color-primary) inset;
+ }
+
+/* ------  .searchbar-error-label ------ */
+.searchbar-error-label {
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  color: var(--text-color-error);
+}
+
+/* ------  .searchbar-btn ------ */
+.searchbar-btn {
+  text-transform: capitalize;
+}
+
+
+/* --------------------------------
+ ------  GLOBAL MEDIA QUERIES ------
+  --------------------------------- */
+@media (min-width: 36rem) {
+  .searchbar {
+    column-gap: 1.5rem;
+    padding: 0.625rem 0.625rem 0.625rem 2rem;
+  }
+  .searchbar-icon {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  .searchbar-icon > path {
+    transform: scale(1);
+  }
+}

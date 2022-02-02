@@ -2,3 +2,6 @@
 @import "global.css";
 
 @import "components/layout.css";
+@import "components/usernamePage.css";
+@import "components/searchbar.css";
+
