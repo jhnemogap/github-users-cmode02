@@ -36,7 +36,7 @@ a {
   line-height: inherit;
   color: inherit;
   text-decoration: none;
-  word-break: break-word;
+  word-break: break-all;
 }
 a:hover {
   text-decoration-line: underline;
@@ -114,6 +114,13 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
   color: var(--text-color-secondary);
 }
 
+.opacityAt50 {
+  opacity: 50%;
+}
+
+.opacityAt75 {
+  opacity: 75%;
+}
 
 /* --------------------------------
  ------  GLOBAL MEDIA QUERIES ------

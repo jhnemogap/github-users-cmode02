@@ -71,11 +71,11 @@
                 <h3 class="intro-username" aria-roledescription="username to login">
                   @{{ user.username }}
                 </h3>
-                <p class="" aria-roledescription="date the user joined github">
+                <p class="intro-joined" aria-roledescription="date the user joined github">
                   {{ user.joined }}
                 </p>
               </section>
-              <section class="card-header-bio">
+              <section :class="['card-header-bio', { opacityAt75: !user['biography'] }]">
                 <p aria-roledescription="user biography">
                   {{ user.biography ?? constants.TEXT_BIOGRAPHY_DEFAULT }}
                 </p>
@@ -105,27 +105,31 @@
             <!-- card-main (end)-->
 
             <!-- card-footer -->
-            <footer class="card-footer">
-              <div class="card-footer-detail">
+            <aside class="card-footer">
+              <div v-bind:class="['card-footer-detail', { opacityAt50: !user['location'] }]">
                 <span><location-icon></location-icon></span>
                 <p>{{ user["location"] || constants.TEXT_NOT_AVAILABLE }}</p>
               </div>
 
-              <div class="card-footer-detail">
+              <div v-bind:class="['card-footer-detail', { opacityAt50: !user['website'] }]">
                 <span><website-icon></website-icon></span>
-                <p>{{ user["website"] || constants.TEXT_NOT_AVAILABLE }}</p>
+                <p>
+                  <a target="_blank" rel="noreferrer" :href="user['website']">
+                    {{ user["website"] || constants.TEXT_NOT_AVAILABLE }}
+                  </a>
+                </p>
               </div>
 
-              <div class="card-footer-detail">
+              <div v-bind:class="['card-footer-detail', { opacityAt50: !user['twitter'] }]">
                 <span><twitter-icon></twitter-icon></span>
                 <p>{{ user["twitter"] || constants.TEXT_NOT_AVAILABLE }}</p>
               </div>
 
-              <div class="card-footer-detail">
+              <div v-bind:class="['card-footer-detail', { opacityAt50: !user['company'] }]">
                 <span><company-icon></company-icon></span>
                 <p>{{ user["company"] || constants.TEXT_NOT_AVAILABLE }}</p>
               </div>
-            </footer>
+            </aside>
             <!-- card-footer (end)-->
           </article>
           <!-- user-card (end)-->
