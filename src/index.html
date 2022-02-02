@@ -55,16 +55,78 @@
           <!-- search-bar (end)-->
 
           <!-- user-card -->
-          <article>
-            <header>
-              HEADER USER CARD
+          <article class="card" v-if="!!user">
+            <!-- card-header -->
+            <header class="card-header">
+              <img
+                alt="avatar"
+                width="100%"
+                class="card-header-avatar"
+                :src="user.avatar"
+              />
+              <section class="card-header-intro">
+                <h1 class="intro-name" aria-roledescription="name of the user">
+                  {{ user.name }}
+                </h1>
+                <h3 class="intro-username" aria-roledescription="username to login">
+                  @{{ user.username }}
+                </h3>
+                <p class="" aria-roledescription="date the user joined github">
+                  {{ user.joined }}
+                </p>
+              </section>
+              <section class="card-header-bio">
+                <p aria-roledescription="user biography">
+                  {{ user.biography ?? constants.TEXT_BIOGRAPHY_DEFAULT }}
+                </p>
+              </section>
             </header>
-            <main>
-              MAIN USERNAME CARD
+            <!-- card-header (end)-->
+
+            <!-- card-main -->
+            <main class="card-main">
+              <section class="statistics-section">
+                <div class="statistic-item">
+                  <h4>repos</h4>
+                  <p class="h2 textColorSecondary">{{ user["repos"] }}</p>
+                </div>
+
+                <div class="statistic-item">
+                  <h4>followers</h4>
+                  <p class="h2 textColorSecondary">{{ user["followers"]}}</p>
+                </div>
+
+                <div class="statistic-item">
+                  <h4>following</h4>
+                  <p class="h2 textColorSecondary">{{ user["following"] }}</p>
+                </div>
+              </section>
             </main>
-            <footer>
-              FOOTER USERNAME CARD
+            <!-- card-main (end)-->
+
+            <!-- card-footer -->
+            <footer class="card-footer">
+              <div class="card-footer-detail">
+                <span><location-icon></location-icon></span>
+                <p>{{ user["location"] || constants.TEXT_NOT_AVAILABLE }}</p>
+              </div>
+
+              <div class="card-footer-detail">
+                <span><website-icon></website-icon></span>
+                <p>{{ user["website"] || constants.TEXT_NOT_AVAILABLE }}</p>
+              </div>
+
+              <div class="card-footer-detail">
+                <span><twitter-icon></twitter-icon></span>
+                <p>{{ user["twitter"] || constants.TEXT_NOT_AVAILABLE }}</p>
+              </div>
+
+              <div class="card-footer-detail">
+                <span><company-icon></company-icon></span>
+                <p>{{ user["company"] || constants.TEXT_NOT_AVAILABLE }}</p>
+              </div>
             </footer>
+            <!-- card-footer (end)-->
           </article>
           <!-- user-card (end)-->
         </section>
